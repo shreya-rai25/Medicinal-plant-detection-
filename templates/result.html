@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Plant Prediction Result</h1>
+        <p><strong>Predicted Plant:</strong> {{ label }}</p>
+        <p><strong>Confidence:</strong> {{ confidence }}%</p>
+        <p><strong>About the Plant:</strong> {{ information }}</p>
+        <p><strong>ಸಸ್ಯದ ಬಗ್ಗೆ:</strong> {{ description }}</p>
+        <img src="{{ image_path }}" alt="Uploaded Image" style="max-width: 300px;">
+        
+        <!-- English Audio -->
+        <h3>Audio (English):</h3>
+        <audio controls>
+            <source src="{{ audio_path }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <!-- Kannada Audio -->
+        <h3>Audio (Kannada):</h3>
+        <audio controls>
+            <source src="{{ audio1_path }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <br><br>
+        <a href="{{ url_for('index') }}">Upload Another Image</a>
+    </div>
+</body>
+</html>
